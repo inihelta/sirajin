@@ -1,0 +1,44 @@
+[
+    {
+        "block": 1,
+        "data": [
+            [
+                {
+                    "month": "juli",
+                    "hadir": 0,
+                    "izin": 0,
+                    "sakit": 0,
+                    "alpha": 0
+                },
+                {
+                    "month": "juni",
+                    "hadir": 0,
+                    "izin": 0,
+                    "sakit": 0,
+                    "alpha": 0
+                }
+            ]
+        ]
+    },
+    {
+        "block": 1,
+        "data": [
+            [
+                {
+                    "month": "juli",
+                    "hadir": 0,
+                    "izin": 0,
+                    "sakit": 0,
+                    "alpha": 0
+                },
+                {
+                    "month": "juni",
+                    "hadir": 0,
+                    "izin": 0,
+                    "sakit": 0,
+                    "alpha": 0
+                }
+            ]
+        ]
+    }
+]
