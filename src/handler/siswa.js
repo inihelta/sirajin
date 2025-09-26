@@ -129,7 +129,6 @@ const element = (siswa, type = 3, absen) => {
                         </div>
 `
 }
-
 let inputValue = ''
 document.getElementById('searchSiswa').addEventListener('input', async function () {
     // console.log(allSiswa.filter(str => str.Nama.includes(inputValue)) )
@@ -233,7 +232,6 @@ for (const datssiswa of dataSiswas) {
         document.getElementById('absenSelected').innerText = ''
     });
 }
-
 const allselect = document.getElementsByClassName('absenOptions');
 for (const select of allselect) {
     select.addEventListener("change", function () {
@@ -259,3 +257,5 @@ for (const select of allselect) {
         document.getElementById(absen).className = `w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg bg-absen-${typevar} _XDA`
     });
 }
+const totSis = document.getElementById('totalSiswa')
+totSis.innerText = allSiswa.length

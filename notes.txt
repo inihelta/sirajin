@@ -1,5 +1,11 @@
+to do:
 - submit to sheet
-- log
+- login
 - users
-- dates
 - polish
+- get som cawfy
+- backend/server side
+
+polish:
+- all codes absolutely
+- animate the dashboard and portal

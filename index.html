@@ -1,75 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/output.css" rel="stylesheet">
-    <link rel="icon" href="" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
-    <script src="src/main.js" type="module"></script>
-    <title>SiRajin</title>
-</head>
-<body class=" w-full bg-ivory bg-[linear-gradient(to_right,#e1e1e1_1px,transparent_1px),linear-gradient(to_bottom,#e1e1e1_1px,transparent_1px)] bg-[size:6rem_4rem]">
-    <div id="loadscreen" class="bg-[#1b263b] h-[100dvh] w-[100dvw] fixed z-99 flex items-center justify-center">
-        <h1 id="dexar" class="text-[20vw] font-semibold font-fredoka text-gray-300/85"  style="padding-inline: 2rem;">???????</h1>
-    </div>
-
-    <h1 id="ExDex" class="text-[3vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 fixed top-0 left-[50%] translate-x-[-50%] min-md:right-5 min-md:translate-x-[0] z-10"  style="padding-inline: 2rem;">Si<span class="underline decoration-blue-300">Rajin</span></h1>
-
-    <div class="w-[50dvw] h-[100dvh] absolute left-0 bg-blue-400 rounded-r-3xl hidden min-md:block">
-        <img src="src/assets/geometric.png" alt="geometric" class="h-full w-full object-cover rounded-r-3xl">
-    </div>
-    
-    <div class="w-[50dvw] h-[100dvh] absolute right-0 max-md:right-[50%] max-md:translate-x-[50%] items-center justify-center flex">
-        <form method="" action="">
-            <!-- From Uiverse.io by Ameth1208 -->
-            <div class="relative py-3 sm:max-w-xs sm:mx-auto">
-                <div class="min-h-96 px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
-                    <div class="flex flex-col justify-center items-center h-full select-none font-poppins">
-                    
-                        <!-- Header -->
-                        <div class="flex flex-col items-center justify-center gap-2 mb-8">
-                            <p class="m-0 text-[24px] font-semibold dark:text-white">
-                                Login dulu yuk
-                            </p>
-                            <span class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">
-                                Get started with our app, just stop start gooning to femboy and enjoy the sigma experience.
-                            </span>
-                        </div>
-                    
-                        <!-- Username -->
-                        <div class="w-full flex flex-col gap-2">
-                            <label class="font-semibold text-xs text-gray-400">Username</label>
-                            <input type="text" placeholder="Username" class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300" />
-                        </div>
-                    </div>
-                
-                    <!-- Password -->
-                    <div class="w-full flex flex-col gap-2">
-                        <label class="font-semibold text-xs text-gray-400">Password</label>
-                        <input type="password" placeholder="••••••••" class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300" />
-                    </div>
-                
-                    <!-- Button -->
-                    <div>
-                        <button class="py-1 px-8 bg-blue-500 hover:bg-blue-800 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
-                            Login
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="src/output.css" rel="stylesheet" />
+        <link rel="icon" href="" type="image/x-icon" />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+            integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+        <script src="src/main.js" type="module"></script>
+        <script src="src/handler/login.js"></script>
+        <title>SiRajin | Login</title>
+    </head>
+    <body
+        class="w-full bg-ivory bg-[linear-gradient(to_right,#e1e1e1_1px,transparent_1px),linear-gradient(to_bottom,#e1e1e1_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div
+            id="loadscreen"
+            class="bg-[#1b263b] h-[100dvh] w-[100dvw] fixed z-99 flex items-center justify-center">
+            <h1
+                id="dexar"
+                class="text-[20vw] font-semibold font-fredoka text-gray-300/85"
+                style="padding-inline: 2rem">
+                ???????
+            </h1>
         </div>
 
+        <h1
+            id="ExDex"
+            class="text-[3vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 fixed top-0 left-[50%] translate-x-[-50%] min-md:right-5 min-md:translate-x-[0] z-10"
+            style="padding-inline: 2rem">
+            Si<span class="underline decoration-blue-300">Rajin</span>
+        </h1>
 
-</body>
+        <div
+            class="w-[50dvw] h-[100dvh] absolute left-0 bg-blue-400 rounded-r-3xl hidden min-md:block">
+            <img
+                src="src/assets/geometric.png"
+                alt="geometric"
+                class="h-full w-full object-cover rounded-r-3xl" />
+        </div>
+
+        <div
+            class="max-md:w-[95dvw] w-[50dvw] h-[100dvh] absolute right-0 max-md:right-[50%] max-md:translate-x-[50%] items-center justify-center flex">
+            <form action="#" method="post">
+                <div class="relative py-3 sm:max-w-xs sm:mx-auto">
+                    <div
+                        class="min-h-96 px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+                        <div
+                            class="flex flex-col justify-center items-center h-full select-none font-poppins">
+                            <!-- Header -->
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 mb-8">
+                                <p
+                                    class="m-0 text-[24px] font-semibold dark:text-white">
+                                    Login dulu yuk
+                                </p>
+                                <span
+                                    class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">
+                                    Get started with our app, be better
+                                    everyday.
+                                </span>
+                            </div>
+
+                            <!-- Username -->
+                            <div class="w-full flex flex-col gap-2">
+                                <label
+                                    class="font-semibold text-xs text-gray-400"
+                                    >Username</label
+                                >
+                                <input
+                                    type="text"
+                                    placeholder="Username"
+                                    required
+                                    class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300" />
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="w-full flex flex-col gap-2">
+                            <label class="font-semibold text-xs text-gray-400"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                                id="password"
+                                class="border rounded-lg px-3 py-2 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300" />
+                            <label
+                                class="text-sm dark:text-gray-300 mb-5 w-fit">
+                                <input type="checkbox" onclick="togglePass()" />
+                                Show Password
+                            </label>
+                        </div>
+
+                        <!-- Button -->
+                        <div>
+                            <!-- note: jangan lupa diganti -->
+                            <button
+                                onclick="login()"
+                                href="dashboard.html"
+                                class="py-1 px-8 bg-blue-500 hover:bg-blue-800 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>

@@ -186,3 +186,6 @@ body {
     background-color: #afc6e4;
     color: #fffff0;
 }
+#modal {
+    display: none;
+}
