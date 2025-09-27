@@ -58,7 +58,7 @@
 
         <div
             class="max-md:w-[95dvw] w-[50dvw] h-[100dvh] absolute right-0 max-md:right-[50%] max-md:translate-x-[50%] items-center justify-center flex">
-            <form action="#" method="post">
+            <form action="#">
                 <div class="relative py-3 sm:max-w-xs sm:mx-auto">
                     <div
                         class="min-h-96 px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
@@ -88,6 +88,7 @@
                                     type="text"
                                     placeholder="Username"
                                     required
+                                    id="username"
                                     class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300" />
                             </div>
                         </div>
@@ -112,10 +113,9 @@
 
                         <!-- Button -->
                         <div>
-                            <!-- note: jangan lupa diganti -->
                             <button
-                                onclick="login()"
-                                href="dashboard.html"
+                                id="loginButton"
+                                onclick="dologin()"
                                 class="py-1 px-8 bg-blue-500 hover:bg-blue-800 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
                                 Login
                             </button>

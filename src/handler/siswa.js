@@ -259,3 +259,41 @@ for (const select of allselect) {
 }
 const totSis = document.getElementById('totalSiswa')
 totSis.innerText = allSiswa.length
+
+document.getElementById("submitabsen").addEventListener('click', async () => {
+    const btn = document.getElementById("submitabsen")
+
+    btn.disabled = true;// disable tombol
+    btn.innerText = "Mengirim data..."; // kasih indikator loading
+    const tanggal = document.getElementById("dateTanggal").value;
+
+    // buat array absensi
+    const dataAbsen = allSiswa.map(s => ({
+        No: s.No,
+        Nama: s.Nama.toUpperCase(),
+        tanggal: tanggal,
+        absen: s.absen   // misalnya default hadir = 3
+    }));
+
+    console.log("Data absen siap dikirim:", dataAbsen);
+
+    // kirim ke Google Apps Script
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxonpQPUiN5U91E-sIdEK6ooLjAx-x5DMLVi16uDMzqbYIBTRJn7CAFQq7Qodi329W0/exec", {
+        mode: "no-cors",
+        method: "POST",
+        body: JSON.stringify(dataAbsen),
+        headers: { "Content-Type": "application/json" }
+    });
+
+    // kalau API Apps Script balikin JSON
+    const result = res;
+    console.log("Respon dari server:", result);
+
+    if (result != null) {
+        console.log("Semua absen berhasil dikirim!");
+    }
+    btn.disabled = false;
+    btn.innerText = "Submit";
+    document.getElementById('modal').setAttribute('data-toggle', "false"); 
+    document.getElementById('modal').style.display = "none"; 
+})

@@ -189,3 +189,6 @@ body {
 #modal {
     display: none;
 }
+#modalLogout {
+    display: none;
+}

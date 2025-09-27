@@ -1,10 +1,9 @@
 to do:
-- submit to sheet
-- login
-- users
 - polish
 - get som cawfy
-- backend/server side
+- get som idea 
+- make modals n fren
+- submit feature in mobile
 
 polish:
 - all codes absolutely

@@ -46,9 +46,11 @@
             class="bg-[#1b263b]/25 backdrop-blur-xs h-[100dvh] w-[100dvw] fixed z-97 flex items-center justify-center">
             <form
                 action="#"
-                method="post"
-                class="w-dvw h-dvh flex items-center">
-                <div class="relative py-3 sm:max-w-xs sm:mx-auto">
+                method="get"
+                id="modalF"
+                class="w-dvw h-dvh flex items-center justify-center">
+                <div
+                    class="relative py-3 sm:max-w-xs sm:mx-auto max-md:w-[90dvw]">
                     <div
                         class="h-fit px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
                         <div
@@ -76,6 +78,7 @@
                                 <input
                                     type="date"
                                     required
+                                    id="dateTanggal"
                                     class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900 dark:text-gray-300 dark:scheme-dark" />
                             </div>
                         </div>
@@ -84,6 +87,7 @@
                         <div>
                             <!-- note: jangan lupa diganti -->
                             <button
+                                id="submitabsen"
                                 class="py-1 px-8 bg-blue-500 hover:bg-blue-800 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-100 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
                                 Submit
                             </button>
@@ -92,6 +96,49 @@
                 </div>
             </form>
         </div>
+
+        <div
+            id="modalLogout"
+            data-toggle="false"
+            class="bg-[#1b263b]/25 backdrop-blur-xs h-[100dvh] w-[100dvw] fixed z-97 flex items-center justify-center">
+            <form
+                action="#"
+                class="w-dvw h-dvh flex items-center justify-center"
+                id="modalLogoutF">
+                <div
+                    class="relative py-3 sm:max-w-xs sm:mx-auto max-md:w-[90dvw]">
+                    <div
+                        class="h-fit px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+                        <div
+                            class="flex flex-col justify-center items-center h-full select-none font-poppins">
+                            <!-- Header -->
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 mb-8">
+                                <p
+                                    class="m-0 text-[24px] font-semibold dark:text-white">
+                                    Logout?
+                                </p>
+                                <span
+                                    class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">
+                                    Yakin nih mau keluar? jadi sedih deh.
+                                    konfirmasi dulu ya
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div>
+                            <button
+                                onclick="dologout()"
+                                class="py-1 px-8 bg-red-500 hover:bg-red-800 focus:ring-offset-red-200 text-white w-full transition ease-in duration-100 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <h1
             id="ExDex"
             class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 absolute top-0 right-0 z-10"
@@ -99,7 +146,10 @@
             <span class="text-[1.5vw] max-md:hidden rounded-full"
                 ><i class="fa-solid fa-user"></i
             ></span>
-            dummy
+            <span
+                id="infoUsername"
+                title="tekan untuk logout"
+                class="select-none hover:text-blue-900 transition duration-200"></span>
         </h1>
         <h1
             id="ExDex"
@@ -201,16 +251,19 @@
 
                     <div
                         class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit bg-purple-400 rounded-xl p-3 font-poppins shadow-lg">
-                        <div class="flex flex-row">
-                            <i
-                                class="fa-solid fa-chart-line mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
-                            <div class="ml-2 flex flex-col">
-                                <span class="text-lg text-blue-50 font-semibold"
-                                    >Overview</span
-                                >
-                                <span class="text-xs text-blue-50"
-                                    >semua siswa di kelas</span
-                                >
+                        <div class="flex flex-row max-md:flex-col gap-2">
+                            <div class="flex flex-row">
+                                <i
+                                    class="fa-solid fa-chart-line w-fit h-fit mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
+                                <div class="ml-2 flex flex-col">
+                                    <span
+                                        class="text-lg text-blue-50 font-semibold"
+                                        >Overview</span
+                                    >
+                                    <span class="text-xs text-blue-50"
+                                        >semua siswa di kelas</span
+                                    >
+                                </div>
                             </div>
                             <div class="w-full flex justify-end">
                                 <div class="relative size-fit transition">
@@ -225,9 +278,6 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="text-blue-50 text-sm ml-1"
-                            >semua siswa</span
-                        >
                     </div>
 
                     <div
