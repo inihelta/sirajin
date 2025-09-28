@@ -192,3 +192,12 @@ body {
 #modalLogout {
     display: none;
 }
+#modalSelesai {
+    display: none;
+}
+.btnGoTop {
+    display: none;
+}
+.btnGoTop.active {
+    display: block;
+}

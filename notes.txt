@@ -2,8 +2,6 @@ to do:
 - polish
 - get som cawfy
 - get som idea 
-- make modals n fren
-- submit feature in mobile
 
 polish:
 - all codes absolutely

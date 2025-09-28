@@ -1,7 +1,7 @@
 const data = async () => {
-    const res = await fetch('src/data/siswa.json')
+    const res = await fetch('https://script.google.com/macros/s/AKfycbyHIVbclaPzupfH8vQNjOh5Rn7bQ6ffoZuz1SxS2eiNlOVwzaXnAdXHSE097jzpxYyq/exec')
     const datas = await res.json();
-    return datas;
+    return datas.siswa;
 }
 let allSiswa = await data()
 
@@ -132,7 +132,7 @@ const element = (siswa, type = 3, absen) => {
 let inputValue = ''
 document.getElementById('searchSiswa').addEventListener('input', async function () {
     // console.log(allSiswa.filter(str => str.Nama.includes(inputValue)) )
-    let inputValue = this.value
+    let inputValue = this.value.toLowerCase()
     document.getElementById('siswas').innerHTML = ''
     // console.clear()
     // console.log(allSiswa.filter(siswa => siswa.Nama.toLowerCase().includes(inputValue)))
@@ -278,7 +278,7 @@ document.getElementById("submitabsen").addEventListener('click', async () => {
     console.log("Data absen siap dikirim:", dataAbsen);
 
     // kirim ke Google Apps Script
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxonpQPUiN5U91E-sIdEK6ooLjAx-x5DMLVi16uDMzqbYIBTRJn7CAFQq7Qodi329W0/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbz73SnG66DiSQT_KVmkrBxxbM7ZDlrT2zcz-Ju6n3lwEkW4ynjrezHIVSUzg2Ail8Q/exec", {
         mode: "no-cors",
         method: "POST",
         body: JSON.stringify(dataAbsen),
@@ -296,4 +296,7 @@ document.getElementById("submitabsen").addEventListener('click', async () => {
     btn.innerText = "Submit";
     document.getElementById('modal').setAttribute('data-toggle', "false"); 
     document.getElementById('modal').style.display = "none"; 
+    const element2 = document.getElementById('modalSelesai')
+    element2.style.display = "block"
+    element2.setAttribute('data-toggle', "true"); 
 })

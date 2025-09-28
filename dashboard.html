@@ -139,6 +139,54 @@
             </form>
         </div>
 
+        <div
+            id="modalSelesai"
+            data-toggle="false"
+            class="bg-[#1b263b]/25 backdrop-blur-xs h-[100dvh] w-[100dvw] fixed z-97 flex items-center justify-center">
+            <form
+                action="#"
+                method=""
+                class="w-dvw h-dvh flex items-center justify-center"
+                id="modaldoneF">
+                <div
+                    class="relative py-3 sm:max-w-xs sm:mx-auto max-md:w-[90dvw]">
+                    <div
+                        class="h-fit px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+                        <div
+                            class="flex flex-col justify-center items-center h-full select-none font-poppins">
+                            <!-- Header -->
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 mb-8">
+                                <p
+                                    class="m-0 text-[24px] font-semibold dark:text-green-100">
+                                    Selesai
+                                </p>
+                                <span
+                                    class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">
+                                    Semua data sudah terkirim nih cek
+                                    <a
+                                        class="underline"
+                                        href="https://docs.google.com/spreadsheets/d/15SCbx-ttrXMp-Zls9RpcV2dwGf2NJ_WHRNZVW3QqrYY/edit?usp=sharing"
+                                        >Disini</a
+                                    >
+                                    buat ngeliat datanya.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div>
+                            <button
+                                onclick="toggledonemodal()"
+                                class="py-1 px-8 bg-green-500 hover:bg-green-800 focus:ring-offset-green-200 text-white w-full transition ease-in duration-100 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
+                                Oke
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <h1
             id="ExDex"
             class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 absolute top-0 right-0 z-10"
@@ -321,6 +369,17 @@
                             </div>
                         </div> -->
                     </div>
+                    <div
+                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg max-md:block hidden">
+                        <div
+                            onclick="toggleModal()"
+                            class="h-fit w-[100%] bg-blue-300 px-3 py-2 rounded-md text-center hover:bg-blue-400 transition-all">
+                            <button
+                                class="text-xl text-black/65 select-none outline-none">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -347,6 +406,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div
+            class="btnGoTop fixed w-10 h-10 bottom-10 left-10 bg-blue-900 text-white/60 text-center rounded-md transition duration-200 hover:outline-2 hover:bg-blue-800 hover:outline-blue-700/75 outline-blue-800 hover:-translate-y-1">
+            <i class="fa-solid fa-chevron-up text-lg mt-[0.8rem]"></i>
         </div>
         <!-- script -->
         <script src="src/handler/dashboard.js"></script>

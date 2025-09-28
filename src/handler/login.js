@@ -1,3 +1,11 @@
+if (sessionStorage.getItem("username") != null && sessionStorage.getItem("role")) {
+    if (sessionStorage.getItem("role").role == "admin") {
+        window.location.href = "dashboard.html";
+    } else if (sessionStorage.getItem("role").role == "normal") {
+        window.location.href = "portal.html";
+    }
+}
+
 function togglePass() {
     var x = document.getElementById("password");
     if (x.type === "password") {
@@ -6,7 +14,9 @@ function togglePass() {
         x.type = "password";
     }
 }
-login = () => { location.pathname = "dashboard.html" }
+const login = () => { location.pathname = "dashboard.html" }
+
+
 async function dologin() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -15,7 +25,7 @@ async function dologin() {
     btn.innerText = "Loading..."; // kasih indikator loading
     
     if (username.length > 1 && password.length > 0) {
-        const url = `https://script.google.com/macros/s/AKfycbx7_bmJ9sWL0O5ckgGVzS3JYV1PLPN02bY4NTHlK8lSrdzKDVxopQHagoY5lNNugejGAg/exec?username=${username}&password=${password}`;
+        const url = `https://script.google.com/macros/s/AKfycbxNjqyW9DpgJJ3AHHXinmrjjjq9NXTKVH4edncHyUfVtR8Uvv-mwHY9ukyfMRSZS8zGDw/exec` + `?username=${username}&password=${password}`;
         const res = await fetch(url);
         const data = await res.json();
         // console.log(data)
@@ -23,7 +33,12 @@ async function dologin() {
         
         if (data.login) {
             sessionStorage.setItem("username", username);
-            window.location.href = "dashboard.html";
+            sessionStorage.setItem("role", data.role);
+            if (data.role == "admin") {
+                window.location.href = "dashboard.html";
+            } else if (data.role == "normal") {
+                window.location.href = "portal.html";
+            }
         }   else {
             alert("Username atau password salah!");
             btn.disabled = false;         // disable tombol

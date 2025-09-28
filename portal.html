@@ -1,254 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/output.css" rel="stylesheet">
-    <link rel="icon" href="" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
-    <script src="src/main.js" type="module"></script>
-    <title>SiRajin</title>
-</head>
-<body class=" w-full bg-ivory bg-[linear-gradient(to_right,#e1e1e1_1px,transparent_1px),linear-gradient(to_bottom,#e1e1e1_1px,transparent_1px)] bg-[size:6rem_4rem]">
-    <div id="loadscreen" class="bg-[#1b263b] h-[100dvh] w-[100dvw] fixed z-99 flex items-center justify-center">
-        <h1 id="dexar" class="text-[20vw] font-semibold font-fredoka text-gray-300/85"  style="padding-inline: 2rem;">???????</h1>
-    </div>
-    <h1 id="ExDex" class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 absolute top-0 right-0 z-10"  style="padding-inline: 2rem;"><span class="text-[1.5vw] max-md:hidden rounded-full"><i class="fa-solid fa-user"></i></span> dummy</h1>
-    <h1 id="ExDex" class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 fixed top-0 left-[5] z-10"  style="padding-inline: 2rem;">Si<span class="underline decoration-blue-300">Rajin</span></h1>
-    
-    <div class="absolute left-[50%] top-[9dvh] -translate-x-[50%] w-[100dvw] h-[91dvh] px-5 pb-2"> <!-- parent -->
-        <div class="flex gap-5 size-[100%] justify-between"> <!--step parent-->
-            <div class="h-fit w-[77dvw] max-md:w-full max-xl:justify-center flex flex-wrap items-start content-start gap-5">
-                
-                <div class="w-[15dvw] max-xl:w-[20dvw] max-lg:w-full min-w-[14.5rem] h-[9.3rem] max-xl:h-fit bg-indigo-400 rounded-xl p-3 font-poppins shadow-lg">
-                    <div class="flex flex-row">
-                        <i class="fa-solid fa-chalkboard-user mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
-                        <div class="ml-2 flex flex-col">
-                            <span class="text-lg text-blue-50 font-semibold">Total Siswa</span>
-                            <span class="text-xs text-blue-50">Jumlah total semua siswa</span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="src/output.css" rel="stylesheet" />
+        <link rel="icon" href="" type="image/x-icon" />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+            integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+        <script src="src/main.js" type="module"></script>
+        <title>SiRajin</title>
+    </head>
+    <body
+        class="w-full bg-ivory bg-[linear-gradient(to_right,#e1e1e1_1px,transparent_1px),linear-gradient(to_bottom,#e1e1e1_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div
+            id="loadscreen"
+            class="bg-[#1b263b] h-[100dvh] w-[100dvw] fixed z-99 flex items-center justify-center">
+            <h1
+                id="dexar"
+                class="text-[20vw] font-semibold font-fredoka text-gray-300/85"
+                style="padding-inline: 2rem">
+                ???????
+            </h1>
+        </div>
+
+        <div
+            id="modalLogout"
+            data-toggle="false"
+            class="bg-[#1b263b]/25 backdrop-blur-xs h-[100dvh] w-[100dvw] fixed z-97 flex items-center justify-center">
+            <form
+                action="#"
+                class="w-dvw h-dvh flex items-center justify-center"
+                id="modalLogoutF">
+                <div
+                    class="relative py-3 sm:max-w-xs sm:mx-auto max-md:w-[90dvw]">
+                    <div
+                        class="h-fit px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+                        <div
+                            class="flex flex-col justify-center items-center h-full select-none font-poppins">
+                            <!-- Header -->
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 mb-8">
+                                <p
+                                    class="m-0 text-[24px] font-semibold dark:text-white">
+                                    Logout?
+                                </p>
+                                <span
+                                    class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">
+                                    Yakin nih mau keluar? jadi sedih deh.
+                                    konfirmasi dulu ya
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div>
+                            <button
+                                onclick="dologout()"
+                                class="py-1 px-8 bg-red-500 hover:bg-red-800 focus:ring-offset-red-200 text-white w-full transition ease-in duration-100 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer select-none">
+                                Logout
+                            </button>
                         </div>
                     </div>
-                    <div class="ml-1 mt-2 flex flex-row">
-                        <span class="text-3xl text-blue-50">100</span>
-                    </div>
-                    <span class="text-blue-50 text-sm ml-1">total semua siswa di kelas</span>
                 </div>
+            </form>
+        </div>
 
+        <h1
+            id="ExDex"
+            class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 absolute top-0 right-0 z-10"
+            style="padding-inline: 2rem">
+            <span class="text-[1.5vw] max-md:hidden rounded-full"
+                ><i class="fa-solid fa-user"></i
+            ></span>
+            <span
+                id="infoUsername"
+                title="tekan untuk logout"
+                class="select-none hover:text-blue-900 transition duration-200"></span>
+        </h1>
+        <h1
+            id="ExDex"
+            class="text-[2vw] max-md:text-2xl font-semibold font-fredoka text-gray-800 fixed top-0 left-[5] z-10"
+            style="padding-inline: 2rem">
+            Si<span class="underline decoration-blue-300">Rajin</span>
+        </h1>
 
-                <div class="w-[26dvw] min-w-[14.5rem] max-xl:w-[20dvw] max-lg:w-full h-[9.3rem] max-xl:h-fit bg-blue-400 rounded-xl p-3 font-poppins shadow-lg">
-                    <div class="flex flex-row">
-                        <i class="fa-solid fa-users mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
-                        <div class="ml-2 flex flex-col">
-                            <span class="text-lg text-blue-50 font-semibold">Siswa Hadir</span>
-                            <span class="text-xs text-blue-50">Jumlah siswa hadir</span>
-                        </div>
-                    </div>
-                    <div class="ml-1 mt-2 flex flex-row">
-                        <span class="text-3xl text-blue-50">0</span>
-                        <span class="text-lg my-1 px-1 rounded-md bg-blue-50 text-blue-400 ml-2">25%</span>
-                    </div>
-                    <span class="text-blue-50 text-sm ml-1">wah anaknya rajin ya</span>
-                </div>
-                
-
-                <div class="w-[26dvw] min-w-[14.5rem] max-xl:w-[20dvw] max-lg:w-full h-[9.3rem] max-xl:h-fit bg-indigo-400 rounded-xl p-3 font-poppins shadow-lg">
-                    <div class="flex flex-row">
-                        <i class="fa-solid fa-user-minus mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
-                        <div class="ml-2 flex flex-col">
-                            <span class="text-lg text-blue-50 font-semibold">Siswa Izin</span>
-                            <span class="text-xs text-blue-50">Jumlah siswa yang izin</span>
-                        </div>
-                    </div>
-                    <div class="ml-1 mt-2 flex flex-row">
-                        <span class="text-3xl text-blue-50">100</span>
-                        <span class="text-lg my-1 px-1 rounded-md bg-blue-50 text-indigo-400 ml-2">65%</span>
-                    </div>
-                    <span class="text-blue-50 text-sm ml-1">ni alasan atau beneran?</span>
-                </div>
-                
-
-                <div class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit bg-purple-400 rounded-xl p-3 font-poppins shadow-lg">
-                    <div class="flex flex-row">
-                        <i class="fa-solid fa-chart-line mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
-                        <div class="ml-2 flex flex-col">
-                            <span class="text-lg text-blue-50 font-semibold">Overview</span>
-                            <span class="text-xs text-blue-50">rekap siswa yang izin</span>
-                        </div>
-                    </div>
-                    <span class="text-blue-50 text-sm ml-1">rekap per blok</span>
-                </div>
-
-                
-                <div class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit font-poppins *:mb-5"> <!--bloks wrapper-->
-                    <!-- Wrapper Blok -->
-                    <div class="bg-sky-400 rounded-2xl shadow-md p-6">
-                        <div class="flex flex-row mb-2">
-                            <i class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
+        <div
+            class="absolute left-[50%] top-[9dvh] -translate-x-[50%] w-[100dvw] h-[91dvh] px-5 pb-2">
+            <!-- parent -->
+            <div class="flex gap-5 size-[100%] justify-between">
+                <!--step parent-->
+                <div
+                    class="h-fit w-[77dvw] max-md:w-full max-xl:justify-center flex flex-wrap items-start content-start gap-5">
+                    <div
+                        class="w-[15dvw] max-xl:w-[20dvw] max-lg:w-full min-w-[14.5rem] h-[9.3rem] max-xl:h-fit bg-indigo-400 rounded-xl p-3 font-poppins shadow-lg">
+                        <div class="flex flex-row">
+                            <i
+                                class="fa-solid fa-chalkboard-user mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
                             <div class="ml-2 flex flex-col">
-                                <span class="text-lg text-blue-50 font-semibold">Blok 1</span>
-                                <span class="text-xs text-blue-50">rekap data siswa per blok</span>
+                                <span class="text-lg text-blue-50 font-semibold"
+                                    >Total Siswa</span
+                                >
+                                <span class="text-xs text-blue-50"
+                                    >Jumlah total semua siswa</span
+                                >
                             </div>
                         </div>
-                    
-                        <div class="flex flex-row max-md:flex-col justify-center gap-5">
-                            <!-- Juli -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 Juli</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                </div>
-                            </div>
-                        
-                            <!-- Agustus -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 Juli</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                    
-                                </div>
-                            </div>
+                        <div class="ml-1 mt-2 flex flex-row">
+                            <span class="text-3xl text-blue-50">100</span>
                         </div>
+                        <span class="text-blue-50 text-sm ml-1"
+                            >total semua siswa di kelas</span
+                        >
                     </div>
 
-                    <div class="bg-sky-400 rounded-2xl shadow-md p-6">
-                        <div class="flex flex-row mb-2">
-                            <i class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
+                    <div
+                        class="w-[26dvw] min-w-[14.5rem] max-xl:w-[20dvw] max-lg:w-full h-[9.3rem] max-xl:h-fit bg-blue-400 rounded-xl p-3 font-poppins shadow-lg">
+                        <div class="flex flex-row">
+                            <i
+                                class="fa-solid fa-users mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
                             <div class="ml-2 flex flex-col">
-                                <span class="text-lg text-blue-50 font-semibold">Blok 2</span>
-                                <span class="text-xs text-blue-50">rekap data siswa per blok</span>
+                                <span class="text-lg text-blue-50 font-semibold"
+                                    >Siswa Hadir</span
+                                >
+                                <span class="text-xs text-blue-50"
+                                    >Jumlah siswa hadir</span
+                                >
                             </div>
                         </div>
-                    
-                        <div class="flex flex-row max-md:flex-col justify-center gap-5">
-                            <!-- Juli -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 September</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                </div>
-                            </div>
-                        
-                            <!-- Agustus -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 Juli</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                    
-                                </div>
-                            </div>
+                        <div class="ml-1 mt-2 flex flex-row">
+                            <span class="text-3xl text-blue-50">0</span>
+                            <span
+                                class="text-lg my-1 px-1 rounded-md bg-blue-50 text-blue-400 ml-2"
+                                >25%</span
+                            >
                         </div>
-                    </div>
-                    
-                    <div class="bg-sky-400 rounded-2xl shadow-md p-6">
-                        <div class="flex flex-row mb-2">
-                            <i class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
-                            <div class="ml-2 flex flex-col">
-                                <span class="text-lg text-blue-50 font-semibold">Blok 3</span>
-                                <span class="text-xs text-blue-50">rekap data siswa per blok</span>
-                            </div>
-                        </div>
-                    
-                        <div class="flex flex-row max-md:flex-col justify-center gap-5">
-                            <!-- Juli -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 Juli</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                </div>
-                            </div>
-                        
-                            <!-- Agustus -->
-                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
-                                <h3 class="font-semibold text-lg text-gray-800 mb-2">📅 Juli</h3>
-                                <div class="flex gap-4 flex-wrap">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        hadir: x Siswa
-                                    </span>
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
-                                        Izin: x Siswa
-                                    </span>
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Sakit: x Siswa
-                                    </span>
-                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
-                                        Alpha: x Siswa
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        <span class="text-blue-50 text-sm ml-1"
+                            >wah anaknya rajin ya</span
+                        >
                     </div>
 
+                    <div
+                        class="w-[26dvw] min-w-[14.5rem] max-xl:w-[20dvw] max-lg:w-full h-[9.3rem] max-xl:h-fit bg-indigo-400 rounded-xl p-3 font-poppins shadow-lg">
+                        <div class="flex flex-row">
+                            <i
+                                class="fa-solid fa-user-minus mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
+                            <div class="ml-2 flex flex-col">
+                                <span class="text-lg text-blue-50 font-semibold"
+                                    >Siswa Izin</span
+                                >
+                                <span class="text-xs text-blue-50"
+                                    >Jumlah siswa yang izin</span
+                                >
+                            </div>
+                        </div>
+                        <div class="ml-1 mt-2 flex flex-row">
+                            <span class="text-3xl text-blue-50">100</span>
+                            <span
+                                class="text-lg my-1 px-1 rounded-md bg-blue-50 text-indigo-400 ml-2"
+                                >65%</span
+                            >
+                        </div>
+                        <span class="text-blue-50 text-sm ml-1"
+                            >ni alasan atau beneran?</span
+                        >
+                    </div>
+
+                    <div
+                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit bg-purple-400 rounded-xl p-3 font-poppins shadow-lg">
+                        <div class="flex flex-row">
+                            <i
+                                class="fa-solid fa-chart-line mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 border-2"></i>
+                            <div class="ml-2 flex flex-col">
+                                <span class="text-lg text-blue-50 font-semibold"
+                                    >Overview</span
+                                >
+                                <span class="text-xs text-blue-50"
+                                    >rekap siswa yang izin</span
+                                >
+                            </div>
+                        </div>
+                        <span class="text-blue-50 text-sm ml-1"
+                            >rekap per blok</span
+                        >
+                    </div>
+
+                    <div
+                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit font-poppins *:mb-5">
+                        <!--bloks wrapper-->
+                        <!-- Wrapper Blok -->
+                        <div class="bg-sky-400 rounded-2xl shadow-md p-6">
+                            <div class="flex flex-row mb-2">
+                                <i
+                                    class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
+                                <div class="ml-2 flex flex-col">
+                                    <span
+                                        class="text-lg text-blue-50 font-semibold"
+                                        >Blok 1</span
+                                    >
+                                    <span class="text-xs text-blue-50"
+                                        >rekap data siswa per blok</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-row max-md:flex-col justify-center gap-5">
+                                <!-- Juli -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 Juli
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Agustus -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 Juli
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-sky-400 rounded-2xl shadow-md p-6">
+                            <div class="flex flex-row mb-2">
+                                <i
+                                    class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
+                                <div class="ml-2 flex flex-col">
+                                    <span
+                                        class="text-lg text-blue-50 font-semibold"
+                                        >Blok 2</span
+                                    >
+                                    <span class="text-xs text-blue-50"
+                                        >rekap data siswa per blok</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-row max-md:flex-col justify-center gap-5">
+                                <!-- Juli -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 September
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Agustus -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 Juli
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-sky-400 rounded-2xl shadow-md p-6">
+                            <div class="flex flex-row mb-2">
+                                <i
+                                    class="fa-solid fa-chart-simple mr-1 text-blue-50 text-2xl rounded-md border-dotted mt-1 p-1 px-1.5 border-2"></i>
+                                <div class="ml-2 flex flex-col">
+                                    <span
+                                        class="text-lg text-blue-50 font-semibold"
+                                        >Blok 3</span
+                                    >
+                                    <span class="text-xs text-blue-50"
+                                        >rekap data siswa per blok</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-row max-md:flex-col justify-center gap-5">
+                                <!-- Juli -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 Juli
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Agustus -->
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 mb-4 shadow-sm w-full">
+                                    <h3
+                                        class="font-semibold text-lg text-gray-800 mb-2">
+                                        📅 Juli
+                                    </h3>
+                                    <div class="flex gap-4 flex-wrap">
+                                        <span
+                                            class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            hadir: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm min-w-fit font-medium">
+                                            Izin: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Sakit: x Siswa
+                                        </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium min-w-fit">
+                                            Alpha: x Siswa
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[100%] w-[23dvw] max-md:hidden">
+                    <div class="size-[100%] bg-blue-200 rounded-xl"></div>
                 </div>
             </div>
-            <div class="h-[100%] w-[23dvw] max-md:hidden">
-                <div class="size-[100%] bg-blue-200 rounded-xl"></div>
-            </div>
-        </div> 
-    </div>
-</body>
+        </div>
+        <script src="src/handler/portal.js"></script>
+    </body>
 </html>

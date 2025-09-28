@@ -11,10 +11,13 @@ document.addEventListener('keydown', (event) => {
     }
 });   
 const username = sessionStorage.getItem("username")
-console.log(username)
 if (username == null) {
     window.location.href = "index.html";
 }
+if (sessionStorage.getItem("role") == null || sessionStorage.getItem("role") != "admin") {
+    window.location.href = "index.html";
+}
+
 document.getElementById("infoUsername").innerText = username
 
 function dologout(){
@@ -49,6 +52,10 @@ document.getElementById("modalF").addEventListener('click', (e) => {
     if (e.target !== e.currentTarget) return;
     toggleModal()
 });   
+document.getElementById("modaldoneF").addEventListener('click', (e) => {
+    if (e.target !== e.currentTarget) return;
+    toggledonemodal()
+});   
 
 // async function submitAbsen() {
 //     const tanggal = document.getElementById("dateTanggal").value;
@@ -71,3 +78,29 @@ document.getElementById("modalF").addEventListener('click', (e) => {
 //         alert("Absen berhasil!");
 //     }
 // }
+
+const goTop = document.querySelector(".btnGoTop")
+    window.addEventListener("scroll", ()=>{
+        window.pageYOffset > 500 ? goTop.classList.add("active") : goTop.classList.remove("active");
+    })
+    goTop.addEventListener("click",()=>{
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"smooth"
+        })
+    })
+
+
+function toggledonemodal() {
+    const element = document.getElementById('modalSelesai')
+    element.style.display = (element.getAttribute('data-toggle') == "false") ? "block" : "none"; 
+    element.setAttribute('data-toggle', (element.getAttribute('data-toggle') == "false") ? "true" : "false"); 
+}
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        if (document.getElementById('modalSelesai').getAttribute('data-toggle') == "true") {
+            toggledonemodal()
+        }
+    }
+});
