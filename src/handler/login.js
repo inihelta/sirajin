@@ -1,8 +1,8 @@
 if (sessionStorage.getItem("username") != null && sessionStorage.getItem("role")) {
     if (sessionStorage.getItem("role").role == "admin") {
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard";
     } else if (sessionStorage.getItem("role").role == "normal") {
-        window.location.href = "portal.html";
+        window.location.href = "portal";
     }
 }
 
@@ -14,7 +14,7 @@ function togglePass() {
         x.type = "password";
     }
 }
-const login = () => { location.pathname = "dashboard.html" }
+const login = () => { location.pathname = "dashboard" }
 
 
 async function dologin() {
@@ -35,9 +35,9 @@ async function dologin() {
             sessionStorage.setItem("username", username);
             sessionStorage.setItem("role", data.role);
             if (data.role == "admin") {
-                window.location.href = "dashboard.html";
+                window.location.href = "dashboard";
             } else if (data.role == "normal") {
-                window.location.href = "portal.html";
+                window.location.href = "portal";
             }
         }   else {
             alert("Username atau password salah!");

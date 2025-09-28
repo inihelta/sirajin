@@ -12,17 +12,17 @@ document.addEventListener('keydown', (event) => {
 });   
 const username = sessionStorage.getItem("username")
 if (username == null) {
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 if (sessionStorage.getItem("role") == null || sessionStorage.getItem("role") != "admin") {
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 
 document.getElementById("infoUsername").innerText = username
 
 function dologout(){
     sessionStorage.removeItem("username");
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 
 document.getElementById("infoUsername").addEventListener('click', (event) => {
