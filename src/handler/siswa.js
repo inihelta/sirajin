@@ -1,5 +1,5 @@
 const data = async () => {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbyHIVbclaPzupfH8vQNjOh5Rn7bQ6ffoZuz1SxS2eiNlOVwzaXnAdXHSE097jzpxYyq/exec')
+    const res = await fetch('*')
     const datas = await res.json();
     return datas.siswa;
 }
