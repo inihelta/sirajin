@@ -16,12 +16,12 @@ document.addEventListener('keydown', (event) => {
     }
 }); 
 if (sessionStorage.getItem("username") == null) {
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 document.getElementById("infoUsername").innerText = sessionStorage.getItem("username")
 function dologout(){
     sessionStorage.removeItem("username");
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 document.getElementById("infoUsername").addEventListener('click', (event) => {
     toggleLogoutModal()
