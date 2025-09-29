@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+const splitTypes = document.querySelectorAll('.desca')
+splitTypes.forEach((char,i) => {
+    const text = new SplitType(char, { types: 'words'})
+    gsap.from(text.words,{
+        scrollTrigger: {
+            trigger: char,
+            start: 'top 85%',
+            end: '+=30%',
+            scrub: true,
+            delay: 2,
+        },
+        opacity: 0.3,
+        stagger: 1,
+    })
+})
+})
+
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 function scramble(word) {
   let arr = word.split('');
@@ -25,36 +43,9 @@ function doSomething() {
   gsap.to("#dexar", { text: 'SiRajin', duration: 1, delay: 0.75 });
   setTimeout(() => {
     document.getElementById('loadscreen').style.opacity = "0"
-  }, 2000);
+  }, 2700);
   setTimeout(() => {
     document.getElementById('loadscreen').style.display = "none"
     document.querySelector('body').style.overflow = "auto"
-  }, 2750);
+  }, 3150);
 }
-document.addEventListener("DOMContentLoaded", (event) => {
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
-setTimeout(() => {
-  const lenis = new Lenis();
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-}, 3750);
-
-const splitTypes = document.querySelectorAll('.desca')
-splitTypes.forEach((char,i) => {
-    const text = new SplitType(char, { types: 'words'})
-    gsap.from(text.words,{
-        scrollTrigger: {
-            trigger: char,
-            start: 'top 85%',
-            end: '+=30%',
-            scrub: true,
-            delay: 2,
-        },
-        opacity: 0.3,
-        stagger: 1,
-    })
-})
-})

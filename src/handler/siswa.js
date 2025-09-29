@@ -1,5 +1,5 @@
 const data = async () => {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbyHIVbclaPzupfH8vQNjOh5Rn7bQ6ffoZuz1SxS2eiNlOVwzaXnAdXHSE097jzpxYyq/exec')
+    const res = await fetch('https://script.google.com/macros/s/AKfycbxzQKIbe5aOcG8k6VAV-NPiZW7JqJh354a-ijP6maxpMVlf29dDkeLL46fkasRJtXFk/exec')
     const datas = await res.json();
     return datas.siswa;
 }
@@ -10,16 +10,16 @@ const element = (siswa, type = 3, absen) => {
     let options = /* html */`
         <option
             value="3"
-            label="hadir"></option>
+            label="Hadir"></option>
         <option
             value="0"
-            label="alpha"></option>
+            label="Alpha"></option>
         <option
             value="1"
-            label="sakit"></option>
+            label="Sakit"></option>
         <option
             value="2"
-            label="izin"></option>
+            label="Izin"></option>
     `
     switch (type) {
         case 0:
@@ -40,64 +40,64 @@ const element = (siswa, type = 3, absen) => {
             options = /* html */`
                 <option
                     value="0"
-                    label="alpha"></option>
+                    label="Alpha"></option>
                     <option
                     value="1"
-                    label="sakit"></option>
+                    label="Sakit"></option>
                     <option
                     value="2"
-                    label="izin"></option>
+                    label="Izin"></option>
                     <option
                         value="3"
-                        label="hadir"></option>
+                        label="Hadir"></option>
                 `
             break
         case 1:
             options = /* html */`
                     <option
                         value="1"
-                        label="sakit"></option>
+                        label="Sakit"></option>
                     <option
                         value="0"
-                        label="alpha"></option>
+                        label="Alpha"></option>
                     <option
                         value="2"
-                        label="izin"></option>
+                        label="Izin"></option>
                     <option
                         value="3"
-                        label="hadir"></option>
+                        label="Hadir"></option>
                 `
             break
         case 2:
             options = /* html */`
                     <option
                         value="2"
-                        label="izin"></option>
+                        label="Izin"></option>
                     <option
                         value="0"
-                        label="alpha"></option>
+                        label="Alpha"></option>
                     <option
                         value="1"
-                        label="sakit"></option>
+                        label="Sakit"></option>
                     <option
                         value="3"
-                        label="hadir"></option>
+                        label="Hadir"></option>
                 `
             break
         case 3:
             options = /* html */`
                     <option
                         value="3"
-                        label="hadir"></option>
+                        label="Hadir"></option>
                     <option
                         value="0"
-                        label="alpha"></option>
+                        label="Alpha"></option>
                     <option
                         value="1"
-                        label="sakit"></option>
+                        label="Sakit"></option>
                     <option
                         value="2"
-                        label="izin"></option>
+                        label="Izin"></option>
                 `
             break
     }
