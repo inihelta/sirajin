@@ -15,12 +15,13 @@ document.addEventListener('keydown', (event) => {
         }
     }
 }); 
-if (sessionStorage.getItem("username") == null) {
+if (localStorage.getItem("username") == null) {
     window.location.href = "index";
 }
-document.getElementById("infoUsername").innerText = sessionStorage.getItem("username")
+document.getElementById("infoUsername").innerText = localStorage.getItem("username")
 function dologout(){
-    sessionStorage.removeItem("username");
+    localStorage.removeItem("username");
+    localStorage.removeItem("role");
     window.location.href = "index";
 }
 document.getElementById("infoUsername").addEventListener('click', (event) => {

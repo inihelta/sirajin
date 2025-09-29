@@ -10,18 +10,19 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });   
-const username = sessionStorage.getItem("username")
+const username = localStorage.getItem("username")
 if (username == null) {
     window.location.href = "index";
 }
-if (sessionStorage.getItem("role") == null || sessionStorage.getItem("role") != "admin") {
+if (localStorage.getItem("role") == null || localStorage.getItem("role") != "admin") {
     window.location.href = "index";
 }
 
 document.getElementById("infoUsername").innerText = username
 
 function dologout(){
-    sessionStorage.removeItem("username");
+    localStorage.removeItem("username");
+    localStorage.removeItem("role");
     window.location.href = "index";
 }
 
@@ -50,6 +51,7 @@ document.getElementById("modalLogoutF").addEventListener('click', (e) => {
 });   
 document.getElementById("modalF").addEventListener('click', (e) => {
     if (e.target !== e.currentTarget) return;
+    if (document.getElementById("submitabsen").disabled = true) return;
     toggleModal()
 });   
 document.getElementById("modaldoneF").addEventListener('click', (e) => {
@@ -59,7 +61,7 @@ document.getElementById("modaldoneF").addEventListener('click', (e) => {
 
 // async function submitAbsen() {
 //     const tanggal = document.getElementById("dateTanggal").value;
-//     const nama = "Ahmad Adnan Okhtar".toUpperCase(); // ini bisa ambil dari sessionStorage login
+//     const nama = "Ahmad Adnan Okhtar".toUpperCase(); // ini bisa ambil dari localStorage login
 //     const absen = 3; // contoh: hadir
 //     const btn = document.getElementById("submitabsen")
 //     btn.disabled = true;         // disable tombol
