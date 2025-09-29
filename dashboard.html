@@ -331,7 +331,7 @@
 
                     <div
                         id="siswas"
-                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-full font-poppins *:mb-3.5 *:hover:scale-[1.01] *:hover:shadow-xl *:duration-100">
+                        class="peer w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-full font-poppins *:mb-3.5 *:hover:scale-[1.01] *:hover:shadow-xl *:duration-100">
                         <!--sisw3a wrapper-->
                         <!-- inisiwa -->
                         <!-- <div
@@ -370,15 +370,31 @@
                             </div>
                         </div> -->
                     </div>
+                    <span
+                        class="peer-has-[div]:hidden block text-center w-full font-fredoka text-xl text-black/75"
+                        >Wahh~ siswa tidak ada!</span
+                    >
+                    <!-- todo! -->
                     <div
-                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg max-md:block hidden">
-                        <div
-                            onclick="toggleModal()"
-                            class="h-fit w-[100%] bg-blue-300 px-3 py-2 rounded-md text-center hover:bg-blue-400 transition-all">
-                            <button
-                                class="text-xl text-black/65 select-none outline-none">
-                                Submit
-                            </button>
+                        class="w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-1 font-poppins shadow-lg max-md:block hidden">
+                        <div class="h-fit gap-2 flex flex-row">
+                            <a
+                                href="https://docs.google.com/spreadsheets/d/15SCbx-ttrXMp-Zls9RpcV2dwGf2NJ_WHRNZVW3QqrYY/edit?usp=sharing"
+                                target="_blank"
+                                class="h-fit w-[100%] bg-green-400 p-3 rounded-md text-center hover:bg-green-500 transition-all">
+                                <button
+                                    class="text-xl text-black/65 select-none outline-none">
+                                    Sheet
+                                </button>
+                            </a>
+                            <div
+                                onclick="toggleModal()"
+                                class="h-fit w-[100%] bg-blue-300 p-3 rounded-md text-center hover:bg-blue-400 transition-all">
+                                <button
+                                    class="text-xl text-black/65 select-none outline-none">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,7 +412,16 @@
                     <br />
                     <span>Absen: <span id="absenSelected"></span></span>
                 </div>
-                <div class="h-fit">
+                <div class="h-fit gap-2 flex flex-row">
+                    <a
+                        href="https://docs.google.com/spreadsheets/d/15SCbx-ttrXMp-Zls9RpcV2dwGf2NJ_WHRNZVW3QqrYY/edit?usp=sharing"
+                        target="_blank"
+                        class="h-fit w-[100%] bg-green-400 p-3 rounded-md text-center hover:bg-green-500 transition-all">
+                        <button
+                            class="text-xl text-black/65 select-none outline-none">
+                            Sheet
+                        </button>
+                    </a>
                     <div
                         onclick="toggleModal()"
                         class="h-fit w-[100%] bg-blue-300 p-3 rounded-md text-center hover:bg-blue-400 transition-all">

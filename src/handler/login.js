@@ -1,10 +1,15 @@
-if (sessionStorage.getItem("username") != null && sessionStorage.getItem("role")) {
-    if (sessionStorage.getItem("role").role == "admin") {
-        window.location.href = "dashboard";
-    } else if (sessionStorage.getItem("role").role == "normal") {
-        window.location.href = "portal";
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("username") != null && localStorage.getItem("role") != null) {
+        if (localStorage.getItem("role") == "admin") {
+            window.location.href = "dashboard";
+        } else if (localStorage.getItem("role") == "normal") {
+            window.location.href = "portal";
+        }
     }
-}
+});
+
+
+
 
 function togglePass() {
     var x = document.getElementById("password");
@@ -32,8 +37,8 @@ async function dologin() {
 
         
         if (data.login) {
-            sessionStorage.setItem("username", username);
-            sessionStorage.setItem("role", data.role);
+            localStorage.setItem("username", username);
+            localStorage.setItem("role", data.role);
             if (data.role == "admin") {
                 window.location.href = "dashboard";
             } else if (data.role == "normal") {
