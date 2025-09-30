@@ -152,16 +152,16 @@ document.getElementById('searchSiswa').addEventListener('input', async function 
             let typevar = ''
             switch (type) {
                 case 0:
-                    typevar = 'Alpha'
+                    typevar = 'alpha'
                     break
                 case 1:
-                    typevar = 'Sakit'
+                    typevar = 'sakit'
                     break
                 case 2:
-                    typevar = 'Izin'
+                    typevar = 'izin'
                     break
                 case 3:
-                    typevar = 'Hadir'
+                    typevar = 'hadir'
                     break
             }
             document.getElementById('absenSelected').innerText = typevar
@@ -182,16 +182,16 @@ document.getElementById('searchSiswa').addEventListener('input', async function 
             let typevar = ''
             switch (Number(selectedValue)) {
                 case 0:
-                    typevar = 'Alpha'
+                    typevar = 'alpha'
                     break
                 case 1:
-                    typevar = 'Sakit'
+                    typevar = 'sakit'
                     break
                 case 2:
-                    typevar = 'Izin'
+                    typevar = 'izin'
                     break
                 case 3:
-                    typevar = 'Hadir'
+                    typevar = 'hadir'
                     break
             }
             document.getElementById(absen).className = `w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg bg-absen-${typevar} _XDA`
@@ -213,16 +213,16 @@ for (const datssiswa of dataSiswas) {
         let typevar = ''
         switch (type) {
             case 0:
-                typevar = 'Alpha'
+                typevar = 'alpha'
                 break
             case 1:
-                typevar = 'Sakit'
+                typevar = 'sakit'
                 break
             case 2:
-                typevar = 'Izin'
+                typevar = 'izin'
                 break
             case 3:
-                typevar = 'Hadir'
+                typevar = 'hadir'
                 break
         }
         document.getElementById('absenSelected').innerText = typevar
@@ -242,16 +242,16 @@ for (const select of allselect) {
         let typevar = ''
         switch (Number(selectedValue)) {
             case 0:
-                typevar = 'Alpha'
+                typevar = 'alpha'
                 break
             case 1:
-                typevar = 'Sakit'
+                typevar = 'sakit'
                 break
             case 2:
-                typevar = 'Izin'
+                typevar = 'izin'
                 break
             case 3:
-                typevar = 'Hadir'
+                typevar = 'hadir'
                 break
         }
         document.getElementById(absen).className = `w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg bg-absen-${typevar} _XDA`
