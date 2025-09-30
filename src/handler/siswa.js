@@ -23,16 +23,16 @@ const element = (siswa, type = 3, absen) => {
     `
     switch (type) {
         case 0:
-            typevar = 'Alpha'
+            typevar = 'alpha'
             break
         case 1:
-            typevar = 'Sakit'
+            typevar = 'sakit'
             break
         case 2:
-            typevar = 'Izin'
+            typevar = 'izin'
             break
         case 3:
-            typevar = 'Hadir'
+            typevar = 'hadir'
             break
     }
     switch (type) {
