@@ -6,7 +6,7 @@ const data = async () => {
 let allSiswa = await data()
 
 const element = (siswa, type = 3, absen) => {
-    let typevar  = 'alpha'
+    let typevar  = 'Alpha'
     let options = /* html */`
         <option
             value="3"
@@ -23,16 +23,16 @@ const element = (siswa, type = 3, absen) => {
     `
     switch (type) {
         case 0:
-            typevar = 'alpha'
+            typevar = 'Alpha'
             break
         case 1:
-            typevar = 'sakit'
+            typevar = 'Sakit'
             break
         case 2:
-            typevar = 'izin'
+            typevar = 'Izin'
             break
         case 3:
-            typevar = 'hadir'
+            typevar = 'Hadir'
             break
     }
     switch (type) {
@@ -152,16 +152,16 @@ document.getElementById('searchSiswa').addEventListener('input', async function 
             let typevar = ''
             switch (type) {
                 case 0:
-                    typevar = 'alpha'
+                    typevar = 'Alpha'
                     break
                 case 1:
-                    typevar = 'sakit'
+                    typevar = 'Sakit'
                     break
                 case 2:
-                    typevar = 'izin'
+                    typevar = 'Izin'
                     break
                 case 3:
-                    typevar = 'hadir'
+                    typevar = 'Hadir'
                     break
             }
             document.getElementById('absenSelected').innerText = typevar
@@ -182,16 +182,16 @@ document.getElementById('searchSiswa').addEventListener('input', async function 
             let typevar = ''
             switch (Number(selectedValue)) {
                 case 0:
-                    typevar = 'alpha'
+                    typevar = 'Alpha'
                     break
                 case 1:
-                    typevar = 'sakit'
+                    typevar = 'Sakit'
                     break
                 case 2:
-                    typevar = 'izin'
+                    typevar = 'Izin'
                     break
                 case 3:
-                    typevar = 'hadir'
+                    typevar = 'Hadir'
                     break
             }
             document.getElementById(absen).className = `w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg bg-absen-${typevar} _XDA`
@@ -213,16 +213,16 @@ for (const datssiswa of dataSiswas) {
         let typevar = ''
         switch (type) {
             case 0:
-                typevar = 'alpha'
+                typevar = 'Alpha'
                 break
             case 1:
-                typevar = 'sakit'
+                typevar = 'Sakit'
                 break
             case 2:
-                typevar = 'izin'
+                typevar = 'Izin'
                 break
             case 3:
-                typevar = 'hadir'
+                typevar = 'Hadir'
                 break
         }
         document.getElementById('absenSelected').innerText = typevar
@@ -242,16 +242,16 @@ for (const select of allselect) {
         let typevar = ''
         switch (Number(selectedValue)) {
             case 0:
-                typevar = 'alpha'
+                typevar = 'Alpha'
                 break
             case 1:
-                typevar = 'sakit'
+                typevar = 'Sakit'
                 break
             case 2:
-                typevar = 'izin'
+                typevar = 'Izin'
                 break
             case 3:
-                typevar = 'hadir'
+                typevar = 'Hadir'
                 break
         }
         document.getElementById(absen).className = `w-[72dvw] min-2xl:w-[69dvw] max-lg:w-full h-fit rounded-xl p-3 font-poppins shadow-lg bg-absen-${typevar} _XDA`
@@ -272,7 +272,7 @@ document.getElementById("submitabsen").addEventListener('click', async () => {
         No: s.No,
         Nama: s.Nama.toUpperCase(),
         tanggal: tanggal,
-        absen: s.absen   // misalnya default hadir = 3
+        absen: s.absen   // misalnya default Hadir = 3
     }));
 
     console.log("Data absen siap dikirim:", dataAbsen);
