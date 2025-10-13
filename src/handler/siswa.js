@@ -1,5 +1,5 @@
 const data = async () => {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbxzQKIbe5aOcG8k6VAV-NPiZW7JqJh354a-ijP6maxpMVlf29dDkeLL46fkasRJtXFk/exec')
+    const res = await fetch('https://script.google.com/macros/s/AKfycbxa0yjLgWutEaizYoV6vWagev5HZqvT63UowqgzGX5VDEFYbNCkuEPgqu-HfP2oo62I/exec')
     const datas = await res.json();
     return datas.siswa;
 }
@@ -272,13 +272,13 @@ document.getElementById("submitabsen").addEventListener('click', async () => {
         No: s.No,
         Nama: s.Nama.toUpperCase(),
         tanggal: tanggal,
-        absen: s.absen   // misalnya default Hadir = 3
+        absen: s.absen
     }));
 
     console.log("Data absen siap dikirim:", dataAbsen);
 
     // kirim ke Google Apps Script
-    const res = await fetch("https://script.google.com/macros/s/AKfycbz73SnG66DiSQT_KVmkrBxxbM7ZDlrT2zcz-Ju6n3lwEkW4ynjrezHIVSUzg2Ail8Q/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbwH4W-vYvCu7mChABY0lsy191pgQ26-u_xj4q5CIiiJLH69QKWBuK0GnwCogOTDg--D/exec", {
         mode: "no-cors",
         method: "POST",
         body: JSON.stringify(dataAbsen),
